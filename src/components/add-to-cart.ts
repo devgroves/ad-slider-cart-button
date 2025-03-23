@@ -13,7 +13,6 @@ export class AddToCart extends LitElement {
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 20px; 
       padding: 10px;
     }
 
@@ -29,7 +28,6 @@ export class AddToCart extends LitElement {
   justify-content: space-between;
   transition: box-shadow 0.3s ease;
   overflow: visible; /* Ensure nothing is clipped */
-  min-height: 300px; /* Adjust as needed */
 }
     .card:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -51,7 +49,6 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 1; /* Ensure the button is above the image */
 }
@@ -66,7 +63,6 @@ button {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       margin-top: 10px;
     }
 
@@ -93,18 +89,18 @@ button {
               ${this.cartCounts[index] > 0
           ? html`
                     <div class="counter">
-                      <button @click=${() => this._decrementCount(index)}>-</button>
+                      <button style=${styleMap({borderRadius: '5px 0 0 5px'})} @click=${() => this._decrementCount(index)}>-</button>
                          <span style=${styleMap({
                            backgroundColor: '#ff8000',
                            color: 'white',
                            padding: '10px 20px',
-                           borderRadius: '5px',
+                           marginTop: '10px',
                            fontSize: '16px',
                            display: 'inline-block',
                          })}>
                         ${this.cartCounts[index]}
                       </span>
-                      <button @click=${() => this._incrementCount(index)}>+</button>
+                      <button style=${styleMap({borderRadius: '0 5px 5px 0'})} @click=${() => this._incrementCount(index)}>+</button>
                     </div>
                   `
           : html`<button @click=${() => this._incrementCount(index)}>Add to Cart</button>`}

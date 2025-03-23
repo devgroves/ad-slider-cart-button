@@ -12,6 +12,9 @@ export class ShoppingApp extends LitElement {
       text-align: center;
       padding: 20px;
     }
+    .card {
+      display: grid;
+    }
   `;
 
   @property({ type: Number }) cartCount = 0;
