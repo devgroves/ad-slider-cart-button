@@ -46,7 +46,7 @@ button {
   background-color: #ff8000;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 13px 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -93,7 +93,7 @@ button {
                          <span style=${styleMap({
                            backgroundColor: '#ff8000',
                            color: 'white',
-                           padding: '10px 20px',
+                           padding: '13px 20px',
                            marginTop: '10px',
                            fontSize: '16px',
                            display: 'inline-block',
